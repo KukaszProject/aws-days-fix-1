@@ -1,0 +1,5 @@
+aws deploy update-deployment-group \
+  --application-name cmtr-ac643e5v-codedeploy-application \
+  --current-deployment-group-name cmtr-ac643e5v-codedeploy-deployment-group \
+  --auto-rollback-configuration enabled=true,events=DEPLOYMENT_FAILURE,DEPLOYMENT_STOP_ON_ALARM \
+  --alarm-configuration enabled=true,alarms=ALBUnhealthy

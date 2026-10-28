@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codedeploy:CreateDeployment",
+                "codedeploy:GetDeployment"
+            ],
+            "Resource": "arn:aws:codedeploy:eu-west-1:<ACCOUNT-ID>:deploymentgroup:${codedeploy-application}/cmtr-ac643e5v-codedeploy-deployment-group"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codedeploy:GetDeploymentConfig"
+            ],
+            "Resource": "arn:aws:codedeploy:eu-west-1:<ACCOUNT-ID>:deploymentconfig:CodeDeployDefault.AllAtOnce"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codedeploy:RegisterApplicationRevision",
+                "codedeploy:GetApplicationRevision"
+            ],
+            "Resource": "arn:aws:codedeploy:eu-west-1:<ACCOUNT-ID>:application:${codedeploy-application}"
+        }
+    ]
+}
