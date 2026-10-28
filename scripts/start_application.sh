@@ -15,7 +15,8 @@ Type=simple
 User=ec2-user
 WorkingDirectory=$APP_DIR
 Environment="PATH=$VENV_DIR/bin"
-ExecStart=$VENV_DIR/bin/python application.py
+# Update ExecStart to use gunicorn and bind to 0.0.0.0:8000
+ExecStart=$VENV_DIR/bin/gunicorn --workers 3 --bind 0.0.0.0:8000 application:app
 Restart=on-failure
 RestartSec=5
 
